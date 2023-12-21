@@ -75,7 +75,7 @@ namespace UploadGoogleDriveWithServiceAccount
             var request = Service.Files.List();
             FileList fileList;
             request.Q = folderChildId != null ? $"'{folderChildId}' in parents" : null;
-            request.Fields = "nextPageToken, files(id, name)";
+            request.Fields = "nextPageToken, files(id, name)";  // nextPageToken là đối tượng được chia trang với 1000 element/PageToken
             do
             {
                 fileList = request.Execute();
